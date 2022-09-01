@@ -44,6 +44,9 @@
 
 #btnMobile {
     display: none;
+    position: fixed;
+    left: 83%;
+    top: 1.15%;
     border: none;
     background-color: #8844EE;
     padding: 8px;
@@ -52,6 +55,7 @@
     max-width: 100%;
 }
 
+
 @media(max-width:720px) {
     #btnMobile {
         display: flex;
@@ -59,7 +63,7 @@
         align-items: center;
     }
 
-    .opcaoContainer {
+    #lista {
         display: none;
     }
 }

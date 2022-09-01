@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import './sideBar.css';
+import './btnClickEvent.css'
 
-const sidebar = () =>{
+
+const sidebar = () => {
+    const [dimensions, setDimensions] = React.useState({
+        height: screen.height,
+        width: screen.width
+    })
+    const [btnClicked, setBtnClicked] = useState(true);
+    React.useEffect(() => {
+        function handleResize() {
+            setDimensions({
+                height: screen.height,
+                width: screen.width
+            })
+            console.log(`${screen.width}:${screen.height}`)
+        }
+        window.addEventListener('resize', handleResize)
+        return _ => {
+            window.removeEventListener('resize', handleResize)
+        }
+    })
+    const handleClickBtnMobile = (e) => {
+        if (btnClicked) {
+            let lista = document.getElementById('lista')
+            lista.style.display = "block"
+        } else {
+            lista.style.display = "none"
+        }
+        setBtnClicked(!btnClicked)
+    }
     return <div className="sidebarContainer">
-        <a href="./"><img id="logo" src="./src/assets/img/logo.svg" alt="Minha Logomarca"/></a>
+        <a href="./"><img id="logo" src="./src/assets/img/logo.svg" alt="Minha Logomarca" /></a>
+        <button id="btnMobile" onClick={handleClickBtnMobile}><img src="./src/assets/img/menu.svg" alt="Botão Mobile" /></button>
         <header className="headerContainer">
             <nav className="navContainer">
-                <button id="btnMobile"><img src="./src/assets/img/menu.svg" alt="Botão Mobile" /></button>
-                <ul className="listaContainer">
+                <ul className={"listaContainer"} id="lista">
                     <li className="opcaoContainer"><a id="sobre" href="">Sobre</a></li>
                     <li className="opcaoContainer"><a id="projetos" href="">Projetos</a></li>
                     <li className="opcaoContainer"><a id="certificacoes" href="">Certificações</a></li>
