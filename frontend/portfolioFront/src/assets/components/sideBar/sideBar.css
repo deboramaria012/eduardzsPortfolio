@@ -1,0 +1,65 @@
+#logo {
+    max-width: 100%;
+    width: 180px;
+}
+
+.sidebarContainer {
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.listaContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#sobre,
+#projetos,
+#certificacoes,
+#contato {
+    color: #131313;
+    text-decoration: none;
+    font-size: 1.15rem;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-bottom: 2px solid transparent;
+    border-radius: 7px;
+}
+
+#sobre:hover,
+#projetos:hover,
+#certificacoes:hover,
+#contato:hover {
+    border-bottom: 2px solid #8844EE;
+    padding: 8px 15px;
+    transition: 0.7s;
+    color: #676767;
+}
+
+#btnMobile {
+    display: none;
+    border: none;
+    background-color: #8844EE;
+    padding: 8px;
+    border-radius: 100%;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+@media(max-width:720px) {
+    #btnMobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .opcaoContainer {
+        display: none;
+    }
+}
