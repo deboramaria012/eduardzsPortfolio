@@ -59,11 +59,23 @@
 @media(max-width:720px) {
     #btnMobile {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        position: inherit;
     }
-
     #lista {
         display: none;
+    }
+    .sidebarContainer{
+        text-align: center;
+        line-height: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .opcaoContainer{
+        background-color: #8844EE;
+        margin-bottom: 10px;
+    }
+    .opcaoTexto{
+        color: #fff;
     }
 }

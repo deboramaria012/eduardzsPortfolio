@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import './sideBar.css';
-import './btnClickEvent.css'
-
 
 const sidebar = () => {
     const [dimensions, setDimensions] = React.useState({
@@ -33,7 +31,9 @@ const sidebar = () => {
     }
     return <div className="sidebarContainer">
         <a href="./"><img id="logo" src="./src/assets/img/logo.svg" alt="Minha Logomarca" /></a>
-        <button id="btnMobile" onClick={handleClickBtnMobile}><img src="./src/assets/img/menu.svg" alt="Botão Mobile" /></button>
+        <div className="btnMenu">
+            <button id="btnMobile" onClick={handleClickBtnMobile}><img src="./src/assets/img/menu.svg" alt="Botão Mobile" /></button>
+        </div>
         <header className="headerContainer">
             <nav className="navContainer">
                 <ul className={"listaContainer"} id="lista">
